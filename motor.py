@@ -7,7 +7,6 @@ import constants as c
 
 class MOTOR:
     def __init__(self, jointName):
-        print(jointName)
         self.jointName = jointName
         self.values = numpy.zeros(c.ITERATIONS)
 
