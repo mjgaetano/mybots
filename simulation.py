@@ -18,6 +18,9 @@ class SIMULATION:
 
         pyrosim.Prepare_To_Simulate(self.robot.robotId)
 
+    def __del__(self):
+        p.disconnect()
+
     def Run(self):
         for i in range(0, c.ITERATIONS):
             p.stepSimulation()
