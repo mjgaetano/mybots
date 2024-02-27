@@ -4,19 +4,12 @@ import time
 import pyrosim.pyrosim as pyrosim
 import numpy
 import random
-
-ITERATIONS = 1000
-amplitudeFL = numpy.pi/2
-frequencyFL = 50
-phaseOffsetFL = 0
-amplitudeBL = numpy.pi/4
-frequencyBL = 50
-phaseOffsetBL = 1
+import constants as c
 
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
-p.setGravity(0,0,-98)
+p.setGravity(0,0,c.G)
 planeId = p.loadURDF("plane.urdf")
 robotId = p.loadURDF("body.urdf")
 
@@ -24,16 +17,16 @@ p.loadSDF("world.sdf")
 
 pyrosim.Prepare_To_Simulate(robotId)
 
-backLegSensorValues = numpy.zeros(ITERATIONS)
-frontLegSensorValues = numpy.zeros(ITERATIONS)
+backLegSensorValues = numpy.zeros(c.ITERATIONS)
+frontLegSensorValues = numpy.zeros(c.ITERATIONS)
 
-targetAnglesFL = amplitudeFL * numpy.sin(frequencyFL * numpy.linspace(0, 2*numpy.pi, ITERATIONS) + phaseOffsetFL)
-targetAnglesBL = amplitudeBL * numpy.sin(frequencyBL * numpy.linspace(0, 2*numpy.pi, ITERATIONS) + phaseOffsetBL)
+targetAnglesFL = c.amplitudeFL * numpy.sin(c.frequencyFL * numpy.linspace(0, 2*numpy.pi, c.ITERATIONS) + c.phaseOffsetFL)
+targetAnglesBL = c.amplitudeBL * numpy.sin(c.frequencyBL * numpy.linspace(0, 2*numpy.pi, c.ITERATIONS) + c.phaseOffsetBL)
 #numpy.save("data/targetAnglesFL.npy", targetAnglesFL)
 #numpy.save("data/targetAnglesBL.npy", targetAnglesBL)
 #exit()
 
-for i in range(0, ITERATIONS):
+for i in range(0, c.ITERATIONS):
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
     frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
