@@ -30,7 +30,7 @@ class MOTOR:
             jointName=self.jointName,
             controlMode=p.POSITION_CONTROL,
             targetPosition=self.values[t],
-            maxForce=150
+            maxForce=c.STRENGTH
         )
 
     def Save_Values(self):

@@ -28,4 +28,4 @@ class SIMULATION:
             self.robot.Sense(i)
             self.robot.Act(i)
 
-            time.sleep(1 / 60)
+            time.sleep(c.SLEEP_TIME)
