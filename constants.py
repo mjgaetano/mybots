@@ -1,6 +1,6 @@
 import numpy
 
-ITERATIONS = 1000
+ITERATIONS = 500
 SLEEP_TIME = 1 / 30
 
 G = -98
