@@ -37,7 +37,7 @@ def Generate_Brain():
     # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=4, weight=-0.5)
     # pyrosim.Send_Synapse(sourceNeuronName=2, targetNeuronName=4, weight=-0.5)
 
-    pyrosim.End()
+    # pyrosim.End()
 
 Create_World()
 Generate_Body()
