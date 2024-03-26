@@ -6,8 +6,6 @@ import random
 class SOLUTION:
     def __init__(self):
         self.weights = numpy.random.rand(3, 2) * 2 - 1
-        print(self.weights)
-        # exit()
 
     def Evaluate(self):
         self.Create_World()
@@ -17,6 +15,7 @@ class SOLUTION:
 
         f = open("fitness.txt")
         fitnessFile = f.read()
+        self.fitness = float(fitnessFile)
         f.close()
 
     def Mutate(self):
