@@ -26,7 +26,7 @@ class HILL_CLIMBER:
         self.child.Mutate()
 
     def Print(self):
-        print(f"parent fitness: {self.parent.fitness}\tchild fitness: {self.child.fitness}")
+        print(f"\nparent fitness: {self.parent.fitness}\tchild fitness: {self.child.fitness}")
 
     def Select(self):
         if self.parent.fitness > self.child.fitness:

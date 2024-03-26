@@ -2,7 +2,7 @@ import numpy
 
 ITERATIONS = 500
 SLEEP_TIME = 1 / 30
-NUMBER_OF_GENS = 2
+NUMBER_OF_GENS = 10
 
 G = -98
 
