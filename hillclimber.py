@@ -30,7 +30,7 @@ class HILL_CLIMBER:
 
     def Select(self):
         if self.parent.fitness > self.child.fitness:
-            self.parent.fitness = self.child.fitness
+            self.parent = self.child
 
     def Show_Best(self):
         self.parent.Evaluate("GUI")
