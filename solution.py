@@ -7,11 +7,11 @@ class SOLUTION:
     def __init__(self):
         self.weights = numpy.random.rand(3, 2) * 2 - 1
 
-    def Evaluate(self):
+    def Evaluate(self, directOrGUI):
         self.Create_World()
         self.Create_Body()
         self.Create_Brain()
-        os.system("python simulate.py")
+        os.system(f"python simulate.py {directOrGUI}")
 
         f = open("fitness.txt")
         fitnessFile = f.read()
