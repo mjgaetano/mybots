@@ -30,3 +30,6 @@ class SIMULATION:
             self.robot.Act(i)
 
             time.sleep(c.SLEEP_TIME)
+
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
